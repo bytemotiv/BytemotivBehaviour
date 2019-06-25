@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Bytemotiv {
 
-    public class BytemotivBehaviour : MonoBehaviour {
+    public partial class BytemotivBehaviour : MonoBehaviour {
     }
 
 }
