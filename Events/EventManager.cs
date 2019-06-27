@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -18,31 +18,31 @@ namespace Bytemotiv.Events {
 
         #region functions
 
-        private static void initEventHandlers() {
+        private static void InitEventHandlers() {
             eventHandlers = eventHandlers ?? new Dictionary<string, EventDelegate>();
         }
 
-        public static void subscribe(string eventId, EventDelegate handler) {
-            initEventHandlers();
+        public static void Subscribe(string eventId, EventDelegate handler) {
+            InitEventHandlers();
             if (!eventHandlers.ContainsKey(eventId)) {
                 eventHandlers.Add(eventId, null);
             }
             eventHandlers[eventId] += handler;
         }
 
-        public static void unsubscribe(string eventId, EventDelegate handler) {
-            initEventHandlers();
+        public static void Unsubscribe(string eventId, EventDelegate handler) {
+            InitEventHandlers();
             if (eventHandlers.ContainsKey(eventId)) {
                 eventHandlers[eventId] -= handler;
             }
         }
 
-        public static void broadcast(string eventId) {
+        public static void Broadcast(string eventId) {
             Event e = new Event(eventId);
-            broadcast(e);
+            Broadcast(e);
         }
 
-        public static void broadcast(Event e) {
+        public static void Broadcast(Event e) {
             if (eventHandlers != null && eventHandlers.ContainsKey(e.eventId)) {
                 //try {
                 eventHandlers[e.eventId](e);
@@ -60,20 +60,20 @@ namespace Bytemotiv {
 
         internal static Dictionary<string, Events.EventManager.EventDelegate> _handlers;
 
-        public static void subscribe(string eventId, Events.EventManager.EventDelegate handler) {
-            Events.EventManager.subscribe(eventId, handler);
+        public static void Subscribe(string eventId, Events.EventManager.EventDelegate handler) {
+            Events.EventManager.Subscribe(eventId, handler);
         }
 
-        public static void unsubscribe(string eventId, Events.EventManager.EventDelegate handler) {
-            Events.EventManager.unsubscribe(eventId, handler);
+        public static void Unsubscribe(string eventId, Events.EventManager.EventDelegate handler) {
+            Events.EventManager.Unsubscribe(eventId, handler);
         }
 
-        public static void broadcast(string eventId) {
-            Events.EventManager.broadcast(eventId);
+        public static void Broadcast(string eventId) {
+            Events.EventManager.Broadcast(eventId);
         }
 
-        public static void broadcast(Events.Event e) {
-            Events.EventManager.broadcast(e);
+        public static void Broadcast(Events.Event e) {
+            Events.EventManager.Broadcast(e);
         }
     
     }

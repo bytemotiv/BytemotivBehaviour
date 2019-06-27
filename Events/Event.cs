@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -26,7 +26,7 @@ namespace Bytemotiv.Events {
             content = new Dictionary<string, object>();
         }
 
-        public void put(string key, object value) {
+        public void Put(string key, object value) {
             Add(key, value);
         }
 
@@ -35,7 +35,7 @@ namespace Bytemotiv.Events {
             content.Add(key, value);
         }
 
-        public string getString(string k, string fallback = "") {
+        public string GetString(string k, string fallback = "") {
             if (content.ContainsKey(k)) {
                 return (string)content[k];
             } else {
@@ -43,7 +43,7 @@ namespace Bytemotiv.Events {
             }
         }
 
-        public int getInt(string k, int fallback = 0) {
+        public int GetInt(string k, int fallback = 0) {
             int result = fallback;
             if (content.ContainsKey(k)) {
                 result = (int)content[k];
@@ -51,7 +51,7 @@ namespace Bytemotiv.Events {
             return result;
         }
 
-        public Vector3 getVector3(string k) {
+        public Vector3 GetVector3(string k) {
             Vector3 result = Vector3.zero;
             if (content.ContainsKey(k)) {
                 result = (Vector3)content[k];
@@ -59,7 +59,7 @@ namespace Bytemotiv.Events {
             return result;
         }
 
-        public bool getBool(string k) {
+        public bool GetBool(string k) {
             bool result = false;
             if (content.ContainsKey(k)) {
                 result = (bool)content[k];
@@ -67,17 +67,17 @@ namespace Bytemotiv.Events {
             return result;
         }
 
-        public float getFloat(string k, float fallback = 0.0F) {
+        public float GetFloat(string k, float fallback = 0.0F) {
             float? result = (float)content[k];
             return result ?? fallback;
         }
 
-        public object get(string k) {
+        public object Get(string k) {
             return content[k];
         }
 
-        public void broadcast() {
-            EventManager.broadcast(this);
+        public void Broadcast() {
+            EventManager.Broadcast(this);
         }
 
         IEnumerator IEnumerable.GetEnumerator() {
