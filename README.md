@@ -4,7 +4,7 @@ BytemotivBehaviour for Unity3D
 
 ## Usage
 
-Simply inherit from `BytemotivBehaviour` or import the `Bytemotiv.Events` namespace.
+Simply inherit from `BytemotivBehaviour` instead of `MonoBehaviour`
 
 ### Event System
 
