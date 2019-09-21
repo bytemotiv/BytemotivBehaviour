@@ -2,27 +2,27 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Bytemotiv.Events {
+namespace Bytemotiv.Messaging {
 
-    // i.e. new Event("blub") {{ "foo", 42 }, { "bar", 123 }}
+    // i.e. new Message("blub") {{ "foo", 42 }, { "bar", 123 }}
     // https://stackoverflow.com/questions/1319708/key-value-pairs-in-c-sharp-params
 
 
-    public class Event : IEnumerable {
+    public class Message : IEnumerable {
 
         #region vars
 
-        public string eventId;
+        public string messageId;
         public Dictionary<string, object> content;
 
         #endregion
 
         // ----------------------------------------------------------------------------------------------------------------
 
-        #region functions 
+        #region functions
 
-        public Event(string eventId) {
-            this.eventId = eventId;
+        public Message(string messageId) {
+            this.messageId = messageId;
             content = new Dictionary<string, object>();
         }
 
