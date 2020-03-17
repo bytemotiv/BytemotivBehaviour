@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -77,7 +77,7 @@ namespace Bytemotiv.Messaging {
         }
 
         public void Broadcast() {
-            EventManager.Broadcast(this);
+            Messaging.MessageManager.Broadcast(this);
         }
 
         IEnumerator IEnumerable.GetEnumerator() {
