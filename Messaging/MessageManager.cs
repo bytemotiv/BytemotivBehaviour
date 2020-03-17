@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -58,22 +58,22 @@ namespace Bytemotiv {
 
     public partial class BytemotivBehaviour {
 
-        internal static Dictionary<string, Messages.MessageManager.MessageDelegate> _handlers;
+        internal static Dictionary<string, Messaging.MessageManager.MessageDelegate> _handlers;
 
-        public static void Subscribe(string messageId, Messages.MessageManager.MessageDelegate handler) {
-            Messages.MessageManager.Subscribe(messageId, handler);
+        public static void Subscribe(string messageId, Messaging.MessageManager.MessageDelegate handler) {
+            Messaging.MessageManager.Subscribe(messageId, handler);
         }
 
-        public static void Unsubscribe(string messageId, Messages.MessageManager.MessageDelegate handler) {
-            Messages.MessageManager.Unsubscribe(messageId, handler);
+        public static void Unsubscribe(string messageId, Messaging.MessageManager.MessageDelegate handler) {
+            Messaging.MessageManager.Unsubscribe(messageId, handler);
         }
 
         public static void Broadcast(string messageId) {
-            Messages.MessageManager.Broadcast(messageId);
+            Messaging.MessageManager.Broadcast(messageId);
         }
 
-        public static void Broadcast(Messages.Message e) {
-            Messages.MessageManager.Broadcast(e);
+        public static void Broadcast(Messaging.Message e) {
+            Messaging.MessageManager.Broadcast(e);
         }
 
     }
